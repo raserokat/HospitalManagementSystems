@@ -1,0 +1,66 @@
+﻿@model HospitalManagementSystem.Models.RoomAcessControl
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RoomAcessControl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Room_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Permission_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Permission_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rfid_key)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rfid_key)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room_status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RoomAcessControl_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

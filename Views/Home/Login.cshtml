@@ -1,0 +1,61 @@
+﻿@model HospitalManagementSystem.Models.UserProfile
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    
+    <fieldset>
+        <div style="margin-left: auto; margin-right: auto; text-align: center;">
+            <h1>Welcome to the Hospital Management System </h1>
+            <p>To use the web app please login with your employee number and your password or you can signup</p>
+        </div>
+
+
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (@ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+        <style type="text/css">
+            .LabelPaddingStyle {
+                padding: 50000px;
+            }
+        </style>
+        <div style="margin-left: auto; margin-right: auto; text-align: center;">
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(a => a.UserName, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                    <td>@Html.TextBoxFor(a => a.UserName, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    <td>@Html.ValidationMessageFor(a => a.UserName)</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(a => a.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </td>
+                    <td>
+                        @Html.PasswordFor(a => a.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(a => a.Password)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Login" class="btn btn-primary btn-lgt" />
+                        @Html.ActionLink("SignUp", "SignUp", "Home", null, new { @class = "btn btn-primary btn-lgt" })
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+
+    </fieldset>
+}
+

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<HospitalManagementSystem.Models.RoomAcessControl>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>AccessControlRooms</h2>
+@Html.ActionLink("Search Room", "ShowSearchForm", "RoomAcessContro", null, new { @class = "btn btn-primary btn-lgt" })
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Room_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Permission_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rfid_key)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room_status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Permission_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rfid_key)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room_status)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.RoomAcessControl_id }, new { @class = "btn btn-success" })
+
+            </td>
+        </tr>
+    }
+
+</table>
